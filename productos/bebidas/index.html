@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/6aacb8126a.js" crossorigin="anonymous"></script>  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+  <header>
+      <p class="logo">TUQR</p>
+       
+        <div class="coct cont-menu ">
+            <i class="fa-solid fa-bars" id="icono-menu" style="color: aliceblue;">  </i>
+        </div>
+        
+        <ul class="navegacion">
+            <li><a href="../index.html">FUERTES</a></li>  
+            <li><a href="../postres/index.html">POSTRES</a></li>
+            
+            <!--<button onclick="calcularSumatoria('CafeExpreso',2200,'total4')" ></button> -->
+          
+              <!--<div id="resultadoTotal" class="boton-sumatoria" >Sumatoria Total: $0.00</div> -->
+              <br>
+              <br>
+            <a href="../cliente/index.html"> <i class="fa-solid fa-cart-arrow-down fa-bounce fa-2x" style="color: #ffffff; "></i></a> 
+            
+
+          
+        </ul>
+
+      </header>
+
+      
+
+<br>
+<br>
+
+      
+<!--PRIMERA FILA-->
+    <div class="contenedor-menu">
+        <div class="contenido">
+
+          <div class="contenido-img">
+            <img src="img/Cappuccino.png" alt="imagen 1">
+          </div>
+
+          <h2 class="h2">Cappuccino  </h2>
+          <span>$9.000</span>
+          <h3> Espresso con leche vaporizada y espuma</h3>
+          <div id="cart">
+           <li data-name="cappuccino" data-price="9000">
+               
+            <input type="number" id="cappuccino" placeholder="cantidad" >
+            <button onclick="calcularTotal('cappuccino',9000,'total4')" class="add-to-cart" >AGREGAR AL CARRITO!
+             
+          </button>
+
+
+        </li>
+          </div>
+        </main>
+        
+        
+        </div>
+
+
+        <div class="contenido">
+
+          <div class="contenido-img">
+            <img src="img/Caffè Espresso.png" alt="imagen 2">
+          </div>
+
+          <h2> Caffè Espresso</h2>
+          <span>$7.000</span>
+          <h3>Café concentrado, corto y fuerte, típico italiano.</h3>
+          
+
+          <main>
+            <div id="cart">
+              <li data-name="espresso" data-price="7000">
+               
+                <input type="number" id="espresso" placeholder="cantidad" >
+            <button onclick="calcularTotal('espresso',7000,'total5')" class="add-to-cart" >AGREGAR AL CARRITO!
+              
+          </button>
+       
+        </li>
+        </main>
+
+        </div>
+
+
+
+        <div class="contenido">
+
+            <div class="contenido-img">
+              <img src="img/Acqua Frizzante.png" alt="imagen 2">
+            </div>
+  
+            <h2> Acqua Frizzante</h2>
+            <span>$3.000</span>
+            <h3>Agua mineral con gas. </h3>
+            
+  
+            <main>
+              <div id="cart">
+                <li data-name="Acqua" data-price="3000">
+                 
+                  <input type="number" id="Acqua" placeholder="cantidad" >
+                  <button onclick="calcularTotal('Acqua',3000,'total6')" class="add-to-cart" >AGREGAR AL CARRITO!
+                   
+                </button>
+             
+              </li>
+          </main>
+          </div>
+  
+
+        <div class="contenido">
+
+              <div class="contenido-img">
+                <img src="img/Limonata.png" alt="imagen 3">
+              </div>
+              <h2>Limonata </h2>
+              <span>$14.000</span>
+              <h3> Bebida de limón, refrescante y natural.</h3>
+
+                <div id="cart">
+                  <li data-name="limonata" data-price="14000">
+                    <input type="number" id="limonata" placeholder="cantidad" >
+                  <button onclick="calcularTotal('limonata',14000,'total7')" class="add-to-cart" >AGREGAR AL CARRITO!
+                   
+                </button>
+             
+              </li>
+              </div>
+            </main>
+    
+  
+        </div>
+
+      </div>
+      
+
+   <section class="contacto">
+    <div class="footer" id="Contactos">
+      <div class="contenidoFinal">
+        <div class="links">
+          <h4>Enlaces de la pagina</h4>
+
+          <ul>
+            <li><a href="">Inicio</a></li>
+            <li><a href="">Sobre Nosotros </a></li>
+          </ul>
+        </div>
+        
+
+        <div class="links">
+          <h4>Nuestros Servicios</h4>
+          <ul>
+            <li><a href="">Marketing</a></li>
+          </ul>
+        </div>
+
+        <div class="links">
+          <h4>Informacion</h4>
+          <div class="redes">
+            <img src="../img/fc.png" alt="">
+          </div>
+            
+        </div>
+
+        <div class="links">
+          <h4>Contactos</h4>
+          <div class="redes">
+            
+            <img src="../img/ig.png" alt="">
+        </div>
+
+      </div>
+    </div>
+   </section>
+
+
+ 
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+
+      <script src="script.js"></script>
+</body>
+</html>

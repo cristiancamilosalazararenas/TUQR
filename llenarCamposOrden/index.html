@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        
+    <div class="login-box">
+        <header >
+            <h1>TUQR</h1>
+        </header>
+    
+        <p>¿Quién solicita la orden?</p>
+        <div class="input-box">
+        <p>Nombre</p>
+        <input type="text" class="input-field" id="nombreCliente" autocomplete="off" required placeholder=""> 
+        <label for="Nombre"></label>
+        
+        </div>
+
+        <div class="input-box">
+            <p>Apellido</p>
+            <input type="text" class="input-field" id="edadCliente" autocomplete="off" required placeholder=""> 
+            <label for="Apellido"></label>
+            
+        </div>
+
+        <div class="input-box">
+            <p>Telefono</p>
+            <input type="text" class="input-field" id="edadCliente" autocomplete="off" required placeholder=""> 
+            <label for="Telefono"></label>
+            
+        </div>
+
+        <div class="input-box">
+            <p>Cedula / Doc de identidad</p>
+            <input type="text" class="input-field" id="edadCliente" autocomplete="off" required placeholder=""> 
+            <label for="Cedula"></label>
+            
+        </div>
+
+
+        <div class="input-box">
+        <p>Medio de pago :</p>
+        <label for="MedioPago"></label>
+        <select id="MedioPago" name="MedioPago" required class="input-field" onchange="mostrarCampoPago()">
+            <option value="">Seleccione un medio</option>
+            <option value="nequi">Nequi</option>
+            <option value="tarjetaCredito">Tarjeta Crédito</option>
+            <option value="tarjetaDebito">Tarjeta Débito</option>
+        </select>
+        </div>
+
+        <!-- Aquí aparecerá el campo según la selección -->
+        <div id="campo-extra"></div>
+
+
+
+          
+        
+        <script src="script.js"></script>
+</body>
+</html>

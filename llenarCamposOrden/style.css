@@ -1,0 +1,147 @@
+/* Resetear los estilos predeterminados del navegador */
+body, html {
+    margin:30px;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f1e2cb;
+}
+
+/* Estilos para el contenedor principal */
+.login-box {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fafafa;
+    border: 1px solid #b5925e;
+    border-radius: 55px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Estilos para el encabezado */
+.login-header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Estilos para el texto de bienvenida */
+.login-header p {
+    font-size: 16px;
+}
+
+/* Estilos para los campos de entrada */
+.input-box {
+    margin-bottom: 10px;
+    position: relative;
+    right: 10px;
+}
+.input-box p{
+    display: flex;
+    font-size: 12px;   
+}
+.input-box label{
+    display: flex;
+    font-size: 12px;   
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    outline: none;
+}
+
+/* Estilos para las etiquetas flotantes en los campos de entrada */
+.input-field + label {
+    position: absolute;
+    top: 12px;
+    left: 10px;
+    font-size: 14px;
+    color: #888;
+    pointer-events: none;
+    transition: top 0.3s, left 0.3s, font-size 0.3s, color 0.3s;
+}
+
+/* Estilos para cuando el campo de entrada tiene foco */
+.input-field:focus {
+    border-color: #007BFF;
+}
+
+.input-field:focus + label {
+    top: -8px;
+    left: 8px;
+    font-size: 12px;
+    color: #007BFF;
+}
+
+/* Estilos para la sección "Recuérdame" y "¿Olvidaste la contraseña?" */
+.forgot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Estilos para los botones y enlaces de inicio de sesión social */
+.input-google {
+    display: inline-flex;
+    align-items: center;
+    background-color: #f1e2cb;
+    border: 1px solid #746363;
+    border-radius: 3px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: .9rem;
+}
+
+.input-google img, img {
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+/* Estilos para el enlace de "Regístrate" */
+.sign-up a {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+}
+
+.input-submit{
+    background-color: #CBA135;
+    width: 102%;
+    height: 1.5rem;
+    border:none ;
+    cursor: pointer;
+    color: #fafafa;
+    border-radius: 1.5rem;
+    font-size: 1rem;
+}
+
+
+button{
+    background-color: #CBA135;
+    border-radius: 10px;
+    border: none;
+    margin: 10px;
+    font-size: 1.5rem;
+}
+h1{
+    color: #f5ebdc;
+}
+
+header{
+    height: 80;
+    background-color: #3f704d;
+    border-radius: 35px;
+    padding: 2px 30px ;
+    display: flex;
+    justify-content: flex-start; /* todo a la izquierda */
+    align-items: center;         /* centrado vertical */
+    gap: 20px; 
+}
+

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/6aacb8126a.js" crossorigin="anonymous"></script>  
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
+    <script src="scriptFuerte.js"></script>
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
@@ -26,7 +26,9 @@
               <!--<div id="resultadoTotal" class="boton-sumatoria" >Sumatoria Total: $0.00</div> -->
               <br>
               <br>
-            <a href="../cliente/index.html"> <i class="fa-solid fa-cart-arrow-down fa-bounce fa-2x" style="color: #ffffff; "></i></a> 
+            <a href="#" onclick="abrirCarrito()"> 
+              <i class="fa-solid fa-cart-arrow-down fa-bounce fa-2x" style="color: #ffffff; "></i>
+            </a> 
             
 
           
@@ -56,12 +58,11 @@
            <li data-name="camarones" data-price="60000">
                
             <input type="number" id="camarones" placeholder="cantidad" >
-            <button onclick="calcularTotal('camarones',60000,'total4')" class="add-to-cart" >AGREGAR AL CARRITO!
-             
-          </button>
+            <button onclick="agregarAlCarrito('Camarones', parseInt(document.getElementById('camarones').value), 60000)" class="add-to-cart">AGREGAR AL CARRITO!</button>
 
+            <!--<button onclick="calcularTotal('camarones',60000,'total4')" class="add-to-cart" >AGREGAR AL CARRITO! -->
 
-        </li>
+          </li>
           </div>
         </main>
         
@@ -303,6 +304,25 @@
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
 
-      <script src="script.js"></script>
+      
+  <!-- Fondo oscuro -->
+  <div id="overlay" class="overlay" onclick="cerrarCarrito()"></div>
+
+  <!-- Panel lateral del carrito -->
+  <div id="cartPanel" class="cart-panel">
+    <div class="cart-header">
+      <h2>Tu carrito</h2>
+      <button class="close-cart" onclick="cerrarCarrito()">✖</button>
+    </div>
+
+    <div class="cart-items" id="cartItems"></div>
+
+  <div class="cart-footer">
+    <p id="cartTotal">Total: $0.00</p>
+    <button class="checkout-btn" onclick="mostrarAlerta()">Finalizar compra</button>
+    </div>
+  </div>
+
+
 </body>
 </html>

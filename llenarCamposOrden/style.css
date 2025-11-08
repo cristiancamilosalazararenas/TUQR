@@ -145,3 +145,12 @@ header{
     gap: 20px; 
 }
 
+/* Agregamos el estilo correspondiente a los mensajes de error */
+.error {
+  color: red;
+  font-size: 12px;
+  display: block;
+  margin-top: 3px;
+  margin-left: 10px;
+  text-align: left;
+}

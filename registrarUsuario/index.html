@@ -18,14 +18,18 @@
        
         <div class="input-box">
         
-        <input type="text" class="input-field" id="nombreCliente" autocomplete="off" required placeholder="Correo electrónico o teléfono"> 
+        <input type="text" class="input-field" id="nombreCliente" autocomplete="off" required placeholder="Correo electrónico o teléfono">
+        <!-- Agregué un espacio pequeño para mostrar los errores -->
+        <span class="error" id="errorCorreo"></span> 
         <label for="Correo electrónico o teléfono"></label>
         
         </div>
 
         <div class="input-box">
         
-            <input type="text" class="input-field" id="edadCliente" autocomplete="off" required placeholder="Contraseña"> 
+            <input type="text" class="input-field" id="edadCliente" autocomplete="off" required placeholder="Contraseña">
+            <!-- Agregué un espacio pequeño para mostrar los errores -->
+            <span class="error" id="errorContrasena"></span> 
             <label for="Contraseña"></label>
             
             </div>
@@ -49,9 +53,9 @@
 
        <div class="input-box">
         
-      <a href="../llenarCamposOrden/index.html">
-        <input type="submit" class="input-submit" value="Iniciar sesión"  >
-    </a>
+        <!-- Removí el enlace para controlar el "click" desde JavaScript -->
+      <button type="button" class="input-submit" id="btnLogin">Iniciar sesión</button>
+
         </div>
         
         <div class="middle-text">

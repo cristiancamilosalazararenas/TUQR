@@ -128,3 +128,13 @@ button{
 h2{
     color: #A63A3A;
 }
+
+/* Así los mensajes se verán justo debajo del campo */
+.error {
+  color: red;
+  font-size: 12px;
+  display: block;
+  margin-top: 3px;
+  margin-left: 10px;
+  text-align: left;
+}

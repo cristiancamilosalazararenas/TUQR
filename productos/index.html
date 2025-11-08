@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/6aacb8126a.js" crossorigin="anonymous"></script>  
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="scriptFuerte.js"></script>
+    <script src="carrito.js"></script>
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
@@ -30,24 +30,18 @@
               <i class="fa-solid fa-cart-arrow-down fa-bounce fa-2x" style="color: #ffffff; "></i>
             </a> 
             
-
-          
         </ul>
 
       </header>
-
-      
-
 <br>
 <br>
 
-      
 <!--PRIMERA FILA-->
     <div class="contenedor-menu">
         <div class="contenido">
 
           <div class="contenido-img">
-            <img src="img/Camarones Toscana.png" alt="imagen 1">
+            <img src="img/Camarones.png" alt="imagen 1">
           </div>
 
           <h2 class="h2"> Camarones Toscana </h2>
@@ -58,9 +52,7 @@
            <li data-name="camarones" data-price="60000">
                
             <input type="number" id="camarones" placeholder="cantidad" >
-            <button onclick="agregarAlCarrito('Camarones', parseInt(document.getElementById('camarones').value), 60000)" class="add-to-cart">AGREGAR AL CARRITO!</button>
-
-            <!--<button onclick="calcularTotal('camarones',60000,'total4')" class="add-to-cart" >AGREGAR AL CARRITO! -->
+            <button onclick="agregarAlCarrito('Camarones', parseInt(document.getElementById('camarones').value), 60000, 'img/Camarones.png')" class="add-to-cart">AGREGAR AL CARRITO!</button>
 
           </li>
           </div>
@@ -73,7 +65,7 @@
         <div class="contenido">
 
           <div class="contenido-img">
-            <img src="img/Spaghetti a la Bolognesa.png" alt="imagen 2">
+            <img src="img/SpaghettiBolo.png" alt="imagen 2">
           </div>
 
           <h2> Spaghetti a la Bolognesa.</h2>
@@ -87,7 +79,8 @@
               <li data-name="Spaghetti" data-price="45000">
                
                 <input type="number" id="Spaghetti" placeholder="cantidad" >
-            <button onclick="calcularTotal('Spaghetti',45000,'total5')" class="add-to-cart" >AGREGAR AL CARRITO!
+             <button onclick="agregarAlCarrito('Spaghetti', parseInt(document.getElementById('Spaghetti').value), 45000, 'img/SpaghettiBolo.png')" class="add-to-cart">AGREGAR AL CARRITO!</button>
+
               
           </button>
        
@@ -101,7 +94,7 @@
         <div class="contenido">
 
             <div class="contenido-img">
-              <img src="img/Tagliatelle al ragù.png" alt="imagen 2">
+              <img src="img/Tagliatelle.png" alt="imagen 2">
             </div>
   
             <h2> Tagliatelle al ragù</h2>
@@ -115,7 +108,8 @@
                 <li data-name="Tagliatelle" data-price="57000">
                  
                   <input type="number" id="Tagliatelle" placeholder="cantidad" >
-                  <button onclick="calcularTotal('Tagliatelle',57000,'total6')" class="add-to-cart" >AGREGAR AL CARRITO!
+                  <button onclick="agregarAlCarrito('Tagliatelle', parseInt(document.getElementById('Tagliatelle').value), 57000, 'img/Tagliatelle.png')" class="add-to-cart">AGREGAR AL CARRITO!</button>
+
                    
                 </button>
              
@@ -127,7 +121,7 @@
         <div class="contenido">
 
               <div class="contenido-img">
-                <img src="img/Lasagna alla Bolognese.png" alt="imagen 3">
+                <img src="img/LasagnaBolo.png" alt="imagen 3">
               </div>
               <h2> Lasagna alla Bolognese  </h2>
               <span>$23.000</span>
@@ -136,7 +130,8 @@
                 <div id="cart">
                   <li data-name="Lasagna" data-price="23000">
                     <input type="number" id="Lasagna" placeholder="cantidad" >
-                  <button onclick="calcularTotal('Lasagna',23000,'total7')" class="add-to-cart" >AGREGAR AL CARRITO!
+                  <button onclick="agregarAlCarrito('Lasagna', parseInt(document.getElementById('Lasagna').value), 23000, 'img/LasagnaBolo.png')" class="add-to-cart">AGREGAR AL CARRITO!</button>
+
                    
                 </button>
              
@@ -157,7 +152,7 @@
         <div class="contenido">
 
           <div class="contenido-img">
-            <img src="img/Spaghetti alla Carbonara.png" alt="imagen 1">
+            <img src="img/SpaghettiCarbonara.png" alt="imagen 1">
           </div>
 
           <h2> Spaghetti alla Carbonara </h2>
@@ -167,7 +162,8 @@
            <li data-name="SpaghettiCarbonara" data-price="23000">
                
             <input type="number" id="SpaghettiCarbonara" placeholder="cantidad" >
-            <button onclick="calcularTotal('camarones',23000,'total4')" class="add-to-cart" >AGREGAR AL CARRITO!
+            <button onclick="agregarAlCarrito('SpaghettiCarbonara', parseInt(document.getElementById('SpaghettiCarbonara').value), 23000, 'img/SpaghettiCarbonara.png')" class="add-to-cart">AGREGAR AL CARRITO!</button>
+
              
           </button>
 
@@ -183,7 +179,7 @@
         <div class="contenido">
 
           <div class="contenido-img">
-            <img src="img/Penne all’Arrabbiata.png" alt="imagen 2">
+            <img src="img/PenneArrabbiata.png" alt="imagen 2">
           </div>
 
           <h2> Penne all Arrabbiata</h2>
@@ -193,10 +189,11 @@
 
           <main>
             <div id="cart">
-              <li data-name="PenneArra" data-price="37000">
+              <li data-name="PenneArrabbiata" data-price="37000">
                
-                <input type="number" id="PenneArra" placeholder="cantidad" >
-            <button onclick="calcularTotal('PenneArra',37000,'total5')" class="add-to-cart" >AGREGAR AL CARRITO!
+                <input type="number" id="PenneArrabbiata" placeholder="cantidad" >
+            <button onclick="agregarAlCarrito('PenneArrabbiata', parseInt(document.getElementById('PenneArrabbiata').value), 37000, 'img/PenneArrabbiata.png')" class="add-to-cart">AGREGAR AL CARRITO!</button>
+
               
           </button>
        
@@ -210,21 +207,21 @@
         <div class="contenido">
 
             <div class="contenido-img">
-              <img src="img/Tagliatelle al ragù.png" alt="imagen 2">
+              <img src="img/Parmigiana.png" alt="imagen 2">
             </div>
   
-            <h2> Tagliatelle al ragù</h2>
-            <span>$57.000</span>
-            <h3>Pasta fresca con una salsa lenta de carne y tomate, 
-            clásica de la cocina italiana. </h3>
+            <h2> Parmigiana di Melanzane</h2>
+            <span>$20.000</span>
+            <h3>Capas de berenjena, salsa de tomate y queso al horno.</h3>
             
   
             <main>
               <div id="cart">
-                <li data-name="Tagliatelle" data-price="50000">
+                <li data-name="Parmigiana" data-price="20000">
                  
-                  <input type="number" id="Tagliatelle" placeholder="cantidad" >
-                  <button onclick="calcularTotal('Tagliatelle',57000,'total6')" class="add-to-cart" >AGREGAR AL CARRITO!
+                  <input type="number" id="Parmigiana" placeholder="cantidad" >
+                  <button onclick="agregarAlCarrito('Parmigiana', parseInt(document.getElementById('Parmigiana').value), 20000, 'img/Parmigiana.png')" class="add-to-cart">AGREGAR AL CARRITO!</button>
+
                    
                 </button>
              
@@ -236,16 +233,17 @@
         <div class="contenido">
 
               <div class="contenido-img">
-                <img src="img/Lasagna alla Bolognese.png" alt="imagen 3">
+                <img src="img/Pizza.png" alt="imagen 3">
               </div>
-              <h2> Lasagna alla Bolognese  </h2>
+              <h2> Pizza Margherita </h2>
               <span>$23.000</span>
               <h3>Lasaña con carne, salsa boloñesa y bechamel.</h3>
 
                 <div id="cart">
-                  <li data-name="Lasagna" data-price="23000">
-                    <input type="number" id="Lasagna" placeholder="cantidad" >
-                  <button onclick="calcularTotal('Lasagna',23000,'total7')" class="add-to-cart" >AGREGAR AL CARRITO!
+                  <li data-name="Pizza" data-price="23000">
+                    <input type="number" id="Pizza" placeholder="cantidad" >
+                  <button onclick="agregarAlCarrito('Pizza', parseInt(document.getElementById('Pizza').value), 45000, 'img/Pizza.png')" class="add-to-cart">AGREGAR AL CARRITO!</button>
+
                    
                 </button>
              
@@ -305,23 +303,19 @@
 
 
       
-  <!-- Fondo oscuro -->
-  <div id="overlay" class="overlay" onclick="cerrarCarrito()"></div>
-
-  <!-- Panel lateral del carrito -->
-  <div id="cartPanel" class="cart-panel">
-    <div class="cart-header">
-      <h2>Tu carrito</h2>
-      <button class="close-cart" onclick="cerrarCarrito()">✖</button>
-    </div>
-
-    <div class="cart-items" id="cartItems"></div>
-
-  <div class="cart-footer">
-    <p id="cartTotal">Total: $0.00</p>
-    <button class="checkout-btn" onclick="mostrarAlerta()">Finalizar compra</button>
-    </div>
+<!-- Carrito lateral -->
+<div id="overlay" class="overlay" onclick="cerrarCarrito()"></div>
+<div id="cartPanel" class="cart-panel">
+  <div class="cart-header">
+    <h2>Carrito</h2>
+    <button class="btn btn-danger btn-sm" onclick="cerrarCarrito()">X</button>
   </div>
+  <div id="cartItems"></div>
+  <h4 id="cartTotal">Total: $0</h4>
+  <a class="btn btn-warning"  href="../registrarUsuario/index.html">Ir a pagar</a>
+  
+</div>
+
 
 
 </body>

@@ -767,3 +767,10 @@ input{
 .cart-item button {
   margin-left: 5px;
 }
+
+.mensaje {
+  font-family: Lato;
+  font-size: 14px;
+  margin-top: 5px;
+  transition: 0.3s;
+}

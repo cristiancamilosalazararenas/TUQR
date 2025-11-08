@@ -1,0 +1,178 @@
+-- Crear la base de datos
+CREATE DATABASE TuQr;
+USE TuQr;
+
+-- Tabla de Usuarios
+CREATE TABLE Usuarios (
+    id_usuario INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    correo VARCHAR (100) NOT NULL,
+    telefono VARCHAR(20) NOT NULL,
+    metodoDePago VARCHAR(50)
+);
+
+-- Tabla de Empleados
+CREATE TABLE Empleados (
+    id_empleado INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(50) NOT NULL,
+    apellido VARCHAR(50) NOT NULL,
+    correo VARCHAR(50) NOT NULL,
+    contacto_principal VARCHAR(20)
+);
+
+-- Tabla de Productos
+CREATE TABLE Productos (
+    id_producto INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    stock INT(100) NOT NULL,
+    precio FLOAT(10) NOT NULL,	
+    descripcion VARCHAR(1000) NOT NULL,
+    imagen_url VARCHAR(300) NOT NULL,
+    video_url VARCHAR(300)
+);
+
+-- Tabla de Pedidos
+CREATE TABLE Pedidos (
+    id_pedido INT AUTO_INCREMENT PRIMARY KEY,
+    id_usuario INT,
+    id_empleado INT,
+    id_producto INT,
+    precio_total INT NOT NULL,
+    fecha DATE NOT NULL,
+    FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario),
+    FOREIGN KEY (id_empleado) REFERENCES Empleados(id_empleado),
+    FOREIGN KEY (id_producto) REFERENCES Productos(id_producto)
+);
+
+-- INSERTAR DATOS DE PRUEBA
+
+-- Usuarios
+INSERT INTO Usuarios (nombre, correo, telefono, metodoDePago) VALUES
+('Giovanni Rossi', 'giovanni.rossi@example.com', '3216549870', 'Tarjeta de crédito'),
+('Maria Bianchi', 'maria.bianchi@example.com', '3102589634', 'Efectivo');
+
+-- Empleados
+INSERT INTO Empleados (nombre, apellido, correo, contacto_principal) VALUES
+('Luca', 'Verdi', 'luca.verdi@tuqr.com', '3001112233'),
+('Paolo', 'Romano', 'paolo.romano@tuqr.com', '3004445566');
+
+-- Productos (comida italiana con stock, imagen y video)
+INSERT INTO Productos (nombre, stock, precio, descripcion, imagen_url, video_url) VALUES
+('Spaghetti alla Carbonara', 20, 28.50, 'Pasta con huevo, pecorino romano y panceta', 'https://ejemplo.com/img/carbonara.jpg', 'https://ejemplo.com/video/carbonara.mp4'),
+('Lasagna alla Bolognese', 15, 32.00, 'Lasaña con salsa boloñesa y bechamel', 'https://ejemplo.com/img/lasagna.jpg', 'https://ejemplo.com/video/lasagna.mp4'),
+('Pizza Margherita', 25, 25.00, 'Tomate, mozzarella fresca y albahaca', 'https://ejemplo.com/img/margherita.jpg', 'https://ejemplo.com/video/margherita.mp4'),
+('Pizza Quattro Formaggi', 18, 30.00, 'Pizza con mezcla de cuatro quesos italianos', 'https://ejemplo.com/img/4formaggi.jpg', 'https://ejemplo.com/video/4formaggi.mp4'),
+('Chianti Classico', 30, 45.00, 'Vino tinto toscano', 'https://ejemplo.com/img/chianti.jpg', NULL),
+('Tiramisu', 40, 18.00, 'Postre de café, cacao y mascarpone', 'https://ejemplo.com/img/tiramisu.jpg', NULL);
+
+-- Pedidos (ajustados: ya no existe cantidad ni subtotal, se usa precio_total y fecha)
+INSERT INTO Pedidos (id_usuario, id_empleado, id_producto, precio_total, fecha) VALUES
+(1, 1, 1, 57, '2025-10-30'),  -- Giovanni pide 2 Carbonaras, atendido por Luca
+(1, 1, 5, 45, '2025-10-30'),  -- Giovanni pide 1 Chianti Classico
+(2, 2, 3, 25, '2025-10-30'),  -- Maria pide 1 Pizza Margherita
+(2, 2, 6, 36, '2025-10-30');  -- Maria pide 2 Tiramisú
+
+-- VERIFICACION TABLAS(DATOS DE PRUEBA)
+mysql> show tables;
++----------------+
+| Tables_in_tuqr |
++----------------+
+| empleados      |
+| pedidos        |
+| productos      |
+| usuarios       |
++----------------+
+4 rows in set (0.00 sec)
+
+mysql> desc empleados;
++--------------------+-------------+------+-----+---------+----------------+
+| Field              | Type        | Null | Key | Default | Extra          |
++--------------------+-------------+------+-----+---------+----------------+
+| id_empleado        | int         | NO   | PRI | NULL    | auto_increment |
+| nombre             | varchar(50) | NO   |     | NULL    |                |
+| apellido           | varchar(50) | NO   |     | NULL    |                |
+| correo             | varchar(50) | NO   |     | NULL    |                |
+| contacto_principal | varchar(20) | YES  |     | NULL    |                |
++--------------------+-------------+------+-----+---------+----------------+
+5 rows in set (0.00 sec)
+
+mysql> desc pedidos;
++--------------+------+------+-----+---------+----------------+
+| Field        | Type | Null | Key | Default | Extra          |
++--------------+------+------+-----+---------+----------------+
+| id_pedido    | int  | NO   | PRI | NULL    | auto_increment |
+| id_usuario   | int  | YES  | MUL | NULL    |                |
+| id_empleado  | int  | YES  | MUL | NULL    |                |
+| id_producto  | int  | YES  | MUL | NULL    |                |
+| precio_total | int  | NO   |     | NULL    |                |
+| fecha        | date | NO   |     | NULL    |                |
++--------------+------+------+-----+---------+----------------+
+6 rows in set (0.00 sec)
+
+mysql> desc productos;
++-------------+---------------+------+-----+---------+----------------+
+| Field       | Type          | Null | Key | Default | Extra          |
++-------------+---------------+------+-----+---------+----------------+
+| id_producto | int           | NO   | PRI | NULL    | auto_increment |
+| nombre      | varchar(100)  | NO   |     | NULL    |                |
+| stock       | int           | NO   |     | NULL    |                |
+| precio      | float         | NO   |     | NULL    |                |
+| descripcion | varchar(1000) | NO   |     | NULL    |                |
+| imagen_url  | varchar(300)  | NO   |     | NULL    |                |
+| video_url   | varchar(300)  | YES  |     | NULL    |                |
++-------------+---------------+------+-----+---------+----------------+
+7 rows in set (0.00 sec)
+
+mysql> desc usuarios;
++--------------+--------------+------+-----+---------+----------------+
+| Field        | Type         | Null | Key | Default | Extra          |
++--------------+--------------+------+-----+---------+----------------+
+| id_usuario   | int          | NO   | PRI | NULL    | auto_increment |
+| nombre       | varchar(100) | NO   |     | NULL    |                |
+| correo       | varchar(100) | NO   |     | NULL    |                |
+| telefono     | varchar(20)  | NO   |     | NULL    |                |
+| metodoDePago | varchar(50)  | YES  |     | NULL    |                |
++--------------+--------------+------+-----+---------+----------------+
+5 rows in set (0.00 sec)
+
+mysql> select * from empleados;
++-------------+--------+----------+-----------------------+--------------------+
+| id_empleado | nombre | apellido | correo                | contacto_principal |
++-------------+--------+----------+-----------------------+--------------------+
+|           1 | Luca   | Verdi    | luca.verdi@tuqr.com   | 3001112233         |
+|           2 | Paolo  | Romano   | paolo.romano@tuqr.com | 3004445566         |
++-------------+--------+----------+-----------------------+--------------------+
+2 rows in set (0.00 sec)
+
+mysql> select * from pedidos;
++-----------+------------+-------------+-------------+--------------+------------+
+| id_pedido | id_usuario | id_empleado | id_producto | precio_total | fecha      |
++-----------+------------+-------------+-------------+--------------+------------+
+|         1 |          1 |           1 |           1 |           57 | 2025-10-30 |
+|         2 |          1 |           1 |           5 |           45 | 2025-10-30 |
+|         3 |          2 |           2 |           3 |           25 | 2025-10-30 |
+|         4 |          2 |           2 |           6 |           36 | 2025-10-30 |
++-----------+------------+-------------+-------------+--------------+------------+
+4 rows in set (0.00 sec)
+
+mysql> select * from productos;
++-------------+--------------------------+-------+--------+---------------------------------------------+----------------------------------------+------------------------------------------+
+| id_producto | nombre                   | stock | precio | descripcion                                 | imagen_url                             | video_url                                |
++-------------+--------------------------+-------+--------+---------------------------------------------+----------------------------------------+------------------------------------------+
+|           1 | Spaghetti alla Carbonara |    20 |   28.5 | Pasta con huevo, pecorino romano y panceta  | https://ejemplo.com/img/carbonara.jpg  | https://ejemplo.com/video/carbonara.mp4  |
+|           2 | Lasagna alla Bolognese   |    15 |     32 | Lasaña con salsa boloñesa y bechamel        | https://ejemplo.com/img/lasagna.jpg    | https://ejemplo.com/video/lasagna.mp4    |
+|           3 | Pizza Margherita         |    25 |     25 | Tomate, mozzarella fresca y albahaca        | https://ejemplo.com/img/margherita.jpg | https://ejemplo.com/video/margherita.mp4 |
+|           4 | Pizza Quattro Formaggi   |    18 |     30 | Pizza con mezcla de cuatro quesos italianos | https://ejemplo.com/img/4formaggi.jpg  | https://ejemplo.com/video/4formaggi.mp4  |
+|           5 | Chianti Classico         |    30 |     45 | Vino tinto toscano                          | https://ejemplo.com/img/chianti.jpg    | NULL                                     |
+|           6 | Tiramisu                 |    40 |     18 | Postre de café, cacao y mascarpone          | https://ejemplo.com/img/tiramisu.jpg   | NULL                                     |
++-------------+--------------------------+-------+--------+---------------------------------------------+----------------------------------------+------------------------------------------+
+6 rows in set (0.00 sec)
+
+mysql> select * from usuarios;
++------------+----------------+----------------------------+------------+--------------------+
+| id_usuario | nombre         | correo                     | telefono   | metodoDePago       |
++------------+----------------+----------------------------+------------+--------------------+
+|          1 | Giovanni Rossi | giovanni.rossi@example.com | 3216549870 | Tarjeta de crédito |
+|          2 | Maria Bianchi  | maria.bianchi@example.com  | 3102589634 | Efectivo           |
++------------+----------------+----------------------------+------------+--------------------+
+2 rows in set (0.00 sec)

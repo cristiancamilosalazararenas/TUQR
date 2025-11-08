@@ -1,0 +1,72 @@
+/* Fondo general */
+body, html {
+    margin: 30px;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f1e2cb;
+}
+
+/* Caja principal */
+.login-box {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fafafa;
+    border: 1px solid #b5925e;
+    border-radius: 55px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Encabezado */
+header {
+    height: 80px;
+    background-color: #3f704d;
+    border-radius: 35px;
+    padding: 2px 30px;
+    display: flex;
+    justify-content: flex-start; /* texto a la izquierda */
+    align-items: center;         /* centrado vertical */
+    gap: 20px;
+}
+
+/* Título */
+h1 {
+    color: #f5ebdc;
+}
+
+/* Texto */
+p {
+    color: #cba135;
+}
+
+/* Contenedor de descripción y QR */
+.input-box {
+    margin-bottom: 10px;
+    position: relative;
+    right: 10px;
+}
+
+.input-box p {
+    display: flex;
+    font-size: 12px;
+}
+
+.input-box label {
+    display: flex;
+    font-size: 12px;
+}
+
+/* Contenedor para centrar el QR */
+.contenedor-qr {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;     /* Centra verticalmente */
+}
+
+/* Imagen del QR */
+img {
+    height: 400px;
+    width: 400px;
+    display: block;
+}

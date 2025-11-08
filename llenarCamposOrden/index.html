@@ -17,31 +17,34 @@
         <div class="input-box">
         <p>Nombre</p>
         <input type="text" class="input-field" id="nombreCliente" autocomplete="off" required placeholder=""> 
+        <!-- Agregué un espacio pequeño para mostrar los errores (contenedor) -->
+        <span class="error" id="errorNombre"></span>
         <label for="Nombre"></label>
-        
         </div>
 
         <div class="input-box">
             <p>Apellido</p>
-            <input type="text" class="input-field" id="edadCliente" autocomplete="off" required placeholder=""> 
+            <input type="text" class="input-field" id="apellidoCliente" autocomplete="off" required placeholder="">
+            <!-- Agregué un espacio pequeño para mostrar los errores (contenedor) -->
+            <span class="error" id="errorApellido"></span>
             <label for="Apellido"></label>
-            
         </div>
 
         <div class="input-box">
             <p>Telefono</p>
-            <input type="text" class="input-field" id="edadCliente" autocomplete="off" required placeholder=""> 
+            <input type="text" class="input-field" id="telefonoCliente" autocomplete="off" required placeholder="">
+            <!-- Agregué un espacio pequeño para mostrar los errores (contenedor) --> 
+            <span class="error" id="errorTelefono"></span>
             <label for="Telefono"></label>
-            
         </div>
 
         <div class="input-box">
             <p>Cedula / Doc de identidad</p>
-            <input type="text" class="input-field" id="edadCliente" autocomplete="off" required placeholder=""> 
+            <input type="text" class="input-field" id="cedulaCliente" autocomplete="off" required placeholder="">
+            <!-- Agregué un espacio pequeño para mostrar los errores (contenedor) --> 
+            <span class="error" id="errorCedula"></span> 
             <label for="Cedula"></label>
-            
         </div>
-
 
         <div class="input-box">
         <p>Medio de pago :</p>
@@ -52,14 +55,17 @@
             <option value="tarjetaCredito">Tarjeta Crédito</option>
             <option value="tarjetaDebito">Tarjeta Débito</option>
         </select>
+        <!-- Agregué un espacio pequeño para mostrar los errores (contenedor) --> 
+        <span class="error" id="errorMedioPago"></span>
         </div>
 
         <!-- Aquí aparecerá el campo según la selección -->
         <div id="campo-extra"></div>
 
-
-
-          
+        <!-- Este bloque de código nos permitirá controlar el "click" desde JavaScript -->
+        <div class="input-box">
+            <button type="button" class="input-submit" id="btnContinuar">Continuar</button>
+        </div>
         
         <script src="script.js"></script>
 </body>

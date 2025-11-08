@@ -33,8 +33,10 @@ function mostrarBoton(valor) {
   // Mostrar el botón solo si hay algo escrito
   if (valor.trim().length >= 5) {
     botonContenedor.innerHTML = `
-      <button class="qr-btn" onclick="confirmarPago()" style="color: aliceblue;">Mostrar QR</button>
+      <a href="../mostrarQR/index.html" class="qr-btn" style="color: aliceblue; text-decoration: none;">
+        <button class="qr-btn" onclick="confirmarPago()" style="color: aliceblue;">Mostrar QR</button>
+      </a>
+      
     `;
   }
 }
-
